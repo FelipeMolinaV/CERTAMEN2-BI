@@ -70,8 +70,8 @@ CERTAMEN2-BI/
 │   ├── CASO_SEMESTRAL_BI.pdf
 │   └── presentacion_fase1.pptx
 ├── modelo-dimensional/
-│   ├── 01_crear_modelo_dimensional_albarran.sql
-│   └── diagrama_DW_Albarran.png
+│   ├── Script_DW_Albarran.sql
+│   └── Diagrama_DW_Albarran.png
 ├── database/
 │   ├── backup_transaccional/
 │   │   └── Albarran.bak
