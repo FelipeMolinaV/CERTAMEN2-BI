@@ -463,14 +463,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="ETL_DimTipoDocumento.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{4CB4542C-7DAD-48BF-970C-5158EBA1031A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{437C523F-E16F-42C6-9634-275530D2D7B4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">ETL_DimTipoDocumento</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A0D38451-9E1F-491A-BA7D-956D9C77E7B9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A03C9F80-8605-4BD4-ABAF-1CEA21DAEECF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -501,7 +501,13 @@
         <LinkedAzureSSISIR />
         <LinkedAzureStorage />
         <RemoteExecutionFolder />
-        <ParameterConfigurationValues />
+        <ParameterConfigurationValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2026-10-08T16:24:25.4644607Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationValues>
       </Options>
     </Configuration>
   </Configurations>
