@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/7/2026 7:39:35 PM"
@@ -7,13 +7,53 @@
   DTS:CreatorName="TIPO\betob"
   DTS:DTSID="{9BEC3F71-95C7-4BA3-B7A2-1C8713806E0E}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="13322"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{FDBB38D9-7227-4037-9982-7DA2324547A1}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{09FC8F37-CDE8-4F63-AA19-9A201F541D91}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{E24F448B-B993-45F9-ABFD-B8DE8FBD8663}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7DB5BEC9-32D3-4D30-8AF5-013658F85232}"
+          SQLTask:SqlStatementSource="DECLARE @ini DATE = (SELECT MIN(fecha) FROM Albarran.dbo.ventas);&#xA;SET @ini = DATEFROMPARTS(YEAR(@ini), 1, 1);&#xA;DECLARE @fin DATE = DATEFROMPARTS(YEAR((SELECT MAX(fecha) FROM Albarran.dbo.ventas)) + 1, 12, 31);&#xA;SET DATEFIRST 1;&#xA;&#xA;;WITH d AS (&#xA;  SELECT @ini AS f&#xA;  UNION ALL SELECT DATEADD(DAY, 1, f) FROM d WHERE f &lt; @fin&#xA;)&#xA;INSERT INTO DW_Albarran.dbo.DimTiempo&#xA;  (sk_tiempo, fecha, anio, trimestre, nombre_trimestre, mes, nombre_mes, anio_mes,&#xA;   semana_anio, dia_mes, dia_semana, nombre_dia, es_fin_de_semana)&#xA;SELECT &#xA;    CONVERT(INT, CONVERT(CHAR(8), f, 112)),&#xA;    f, &#xA;    YEAR(f), &#xA;    DATEPART(QUARTER,f), &#xA;    'T' + CAST(DATEPART(QUARTER,f) AS VARCHAR(1)) + ' ' + CAST(YEAR(f) AS VARCHAR(4)),&#xA;    MONTH(f), &#xA;    UPPER(LEFT(DATENAME(MONTH, f), 1)) + SUBSTRING(DATENAME(MONTH, f), 2, 20),&#xA;    YEAR(f) * 100 + MONTH(f),&#xA;    DATEPART(WEEK,f), &#xA;    DAY(f), &#xA;    DATEPART(WEEKDAY,f), &#xA;    UPPER(LEFT(DATENAME(WEEKDAY, f), 1)) + SUBSTRING(DATENAME(WEEKDAY, f), 2, 20),&#xA;    CASE WHEN DATEPART(WEEKDAY,f) IN (6,7) THEN 1 ELSE 0 END&#xA;FROM d &#xA;WHERE f NOT IN (SELECT fecha FROM DW_Albarran.dbo.DimTiempo)&#xA;OPTION (MAXRECURSION 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="165.624997531995,106.736844114319" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
