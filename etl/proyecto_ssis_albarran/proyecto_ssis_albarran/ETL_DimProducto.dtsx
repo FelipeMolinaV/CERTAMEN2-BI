@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{891ACE2C-DD23-4696-900A-C02CB434D3F5}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{6FEB9C6F-B85A-43F7-A408-8E4FA693ACF6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,6 +32,168 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Cargar Stating Producto\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[nombre_producto]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nombre_producto"
+                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="descripcion"
+                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[descripcion]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="categoria"
+                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[categoria]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[rango_precio]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="rango_precio"
+                      lineageId="Package\Cargar Stating Producto\Derived Column.Outputs[Derived Column Output].Columns[rango_precio]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of nombre_producto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of nombre_producto]"
+                      name="Copy of nombre_producto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of descripcion]"
+                      name="Copy of descripcion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[descripcion]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of categoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of categoria]"
+                      name="Copy of categoria"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[categoria]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of rango_precio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of rango_precio]"
+                      name="Copy of rango_precio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Stating Producto\Derived Column.Outputs[Derived Column Output].Columns[rango_precio]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Cargar Stating Producto\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
@@ -192,32 +354,11 @@
                       externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[producto_id]"
                       lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[producto_id]" />
                     <inputColumn
-                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nombre_producto]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="nombre_producto"
-                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_producto]"
-                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre_producto]" />
-                    <inputColumn
-                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[descripcion]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="descripcion"
-                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
-                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[descripcion]" />
-                    <inputColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[categoria_id]"
                       cachedDataType="i4"
                       cachedName="categoria_id"
                       externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria_id]"
                       lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[categoria_id]" />
-                    <inputColumn
-                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[categoria]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="categoria"
-                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria]"
-                      lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[categoria]" />
                     <inputColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[precio_lista]"
                       cachedDataType="i4"
@@ -225,12 +366,37 @@
                       externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_lista]"
                       lineageId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output].Columns[precio_lista]" />
                     <inputColumn
-                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rango_precio]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="rango_precio"
+                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of nombre_producto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Copy of nombre_producto"
+                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_producto]"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of nombre_producto]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of descripcion"
+                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of descripcion]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of categoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of categoria"
+                      externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria]"
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of categoria]" />
+                    <inputColumn
+                      refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of rango_precio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of rango_precio"
                       externalMetadataColumnId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rango_precio]"
-                      lineageId="Package\Cargar Stating Producto\Derived Column.Outputs[Derived Column Output].Columns[rango_precio]" />
+                      lineageId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of rango_precio]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -240,13 +406,15 @@
                       name="producto_id" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_producto]"
-                      dataType="wstr"
-                      length="255"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
                       name="nombre_producto" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
-                      dataType="wstr"
-                      length="255"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
                       name="descripcion" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria_id]"
@@ -254,17 +422,21 @@
                       name="categoria_id" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[categoria]"
-                      dataType="wstr"
-                      length="255"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
                       name="categoria" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_lista]"
-                      dataType="i4"
-                      name="precio_lista" />
+                      dataType="numeric"
+                      name="precio_lista"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rango_precio]"
-                      dataType="wstr"
-                      length="5"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
                       name="rango_precio" />
                   </externalMetadataColumns>
                 </input>
@@ -506,7 +678,7 @@ INNER JOIN categorias c ON c.categoria_id = p.categoria_id</property>
           <paths>
             <path
               refId="Package\Cargar Stating Producto.Paths[Derived Column Output]"
-              endId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Cargar Stating Producto\Conversión de datos.Inputs[Entrada de conversión de datos]"
               name="Derived Column Output"
               startId="Package\Cargar Stating Producto\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -514,6 +686,11 @@ INNER JOIN categorias c ON c.categoria_id = p.categoria_id</property>
               endId="Package\Cargar Stating Producto\Derived Column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Cargar Stating Producto\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Cargar Stating Producto.Paths[Salida de conversión de datos]"
+              endId="Package\Cargar Stating Producto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Salida de conversión de datos"
+              startId="Package\Cargar Stating Producto\Conversión de datos.Outputs[Salida de conversión de datos]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -713,7 +890,7 @@ INNER JOIN categorias c ON c.categoria_id = p.categoria_id</property>
         <NodeLayout
           Size="177.333333333334,42"
           Id="Package\Cargar Stating Producto\OLE DB Destination"
-          TopLeft="234,366" />
+          TopLeft="223.375000158325,374.210526470332" />
         <NodeLayout
           Size="158,42"
           Id="Package\Cargar Stating Producto\Derived Column"
@@ -722,28 +899,6 @@ INNER JOIN categorias c ON c.categoria_id = p.categoria_id</property>
           Size="157.333333333334,42"
           Id="Package\Cargar Stating Producto\OLE DB Source"
           TopLeft="228,69" />
-        <EdgeLayout
-          Id="Package\Cargar Stating Producto.Paths[Derived Column Output]"
-          TopLeft="318.75,251">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,115"
-              Start="0,0"
-              End="0,107.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,107.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cargar Stating Producto.Paths[OLE DB Source Output]"
           TopLeft="306.5,111">
@@ -770,6 +925,54 @@ INNER JOIN categorias c ON c.categoria_id = p.categoria_id</property>
                     Point3="8.5,53" />
                   <mssgle:LineSegment
                     End="8.5,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\Cargar Stating Producto\Conversión de datos"
+          TopLeft="222.499996684492,280.000002446928" />
+        <EdgeLayout
+          Id="Package\Cargar Stating Producto.Paths[Derived Column Output]"
+          TopLeft="313.083331675579,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.0000024469275"
+              Start="0,0"
+              End="0,21.5000024469275">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5000024469275" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Stating Producto.Paths[Salida de conversión de datos]"
+          TopLeft="311.604165088075,322.666669113594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.5438573567382"
+              Start="0,0"
+              End="0,44.0438573567382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.0438573567382" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
