@@ -36,7 +36,6 @@
           <SSIS:Package SSIS:Name="ETL_DimProducto.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_FactVentas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Master.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="ETL_DimTipoDocumento (1).dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Conexion.Albarran.conmgr" />
