@@ -7,13 +7,13 @@
   DTS:CreatorName="TIPO\betob"
   DTS:DTSID="{9103AE30-DDEA-49B3-852B-66931BD0D5DA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="13322"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{B9AD9569-33B8-45CD-A839-5ED828C8F68E}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{AEEAAEAF-F4E1-4DCF-BE6D-9794CA76020F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -151,7 +151,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{7DB5BEC9-32D3-4D30-8AF5-013658F85232}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.stg_FactVentas;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.stg_FactVentas;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -279,45 +279,53 @@
       DTS:To="Package\EPT - Cargar FactVentas (a Staging)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="202.4,41.6"
-          Id="Package\SQL - Limpieza de Staging"
-          TopLeft="65.8333307173518,227.933335144785" />
+          Size="248,41.3333333333334"
+          Id="Package\EPT - Cargar FactVentas (a Staging)"
+          TopLeft="769.666642758582,232.266668512556" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\EPT - DimTiempo"
-          TopLeft="212.499991556009,401.266669855648" />
-        <NodeLayout
-          Size="158.4,41.6"
+          Size="158.666666666667,41.3333333333334"
           Id="Package\EPT - DimCliente"
           TopLeft="158.333327041732,56.3333337810306" />
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\EPT - DimSucursal"
-          TopLeft="313.333320882585,340.800001900991" />
+          Size="172.666666666667,41.3333333333334"
+          Id="Package\EPT - DimEmpleado"
+          TopLeft="351.66665269269,258.199998822212" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,41.3333333333334"
           Id="Package\EPT - DimProducto"
           TopLeft="354.166652593348,204.933333347109" />
         <NodeLayout
-          Size="200,41.6"
+          Size="166.666666666667,41.3333333333334"
+          Id="Package\EPT - DimSucursal"
+          TopLeft="313.333320882585,340.800001900991" />
+        <NodeLayout
+          Size="160.666666666667,41.3333333333334"
+          Id="Package\EPT - DimTiempo"
+          TopLeft="212.499991556009,401.266669855648" />
+        <NodeLayout
+          Size="200,41.3333333333334"
           Id="Package\EPT - DimTipoDocumento"
           TopLeft="431.666649513775,57.7999980370205" />
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\EPT - DimEmpleado"
-          TopLeft="351.66665269269,258.199998822212" />
+          Size="202.666666666667,41.3333333333334"
+          Id="Package\SQL - Limpieza de Staging"
+          TopLeft="65.8333307173518,227.933335144785" />
+        <NodeLayout
+          Size="260.666666666667,41.3333333333334"
+          Id="Package\SQL - Validar y Promover a FactVentas"
+          TopLeft="1064.29997029702,230.200001549721" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="134.633330717352,227.933335144785">
@@ -378,6 +386,96 @@
                     Point3="300.233318796423,-68.2591965542828" />
                   <mssgle:LineSegment
                     End="300.233318796423,-121.033337107764" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 10]"
+          TopLeft="422.933320882585,340.800001900991">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="510.733321875997,-66.9333333884346"
+              Start="0,0"
+              End="510.733321875997,-59.4333333884346">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-29.5964120382998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-29.5964120382998"
+                    Point2="0,-33.5964120382998"
+                    Point3="4,-33.5964120382998" />
+                  <mssgle:LineSegment
+                    End="506.733321875997,-33.5964120382998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="506.733321875997,-33.5964120382998"
+                    Point2="510.733321875997,-33.5964120382998"
+                    Point3="510.733321875997,-37.5964120382998" />
+                  <mssgle:LineSegment
+                    End="510.733321875997,-59.4333333884346" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 11]"
+          TopLeft="318.366658222676,401.266669855648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="535.299984535906,-127.400001343092"
+              Start="0,0"
+              End="535.299984535906,-119.900001343092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-59.9729827856877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-59.9729827856877"
+                    Point2="0,-63.9729827856877"
+                    Point3="4,-63.9729827856877" />
+                  <mssgle:LineSegment
+                    End="531.299984535906,-63.9729827856877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="531.299984535906,-63.9729827856877"
+                    Point2="535.299984535906,-63.9729827856877"
+                    Point3="535.299984535906,-67.9729827856877" />
+                  <mssgle:LineSegment
+                    End="535.299984535906,-119.900001343092" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 12]"
+          TopLeft="1017.66664275858,252.033335031139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.6333275384377,0"
+              Start="0,0"
+              End="39.1333275384377,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.1333275384377,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -522,10 +620,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="248,41.6"
-          Id="Package\EPT - Cargar FactVentas (a Staging)"
-          TopLeft="769.666642758582,232.266668512556" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 6]"
           TopLeft="262.599993708399,97.9333337810306">
@@ -654,100 +748,6 @@
                     Point3="145.671105371404,-20.3333303096558" />
                   <mssgle:LineSegment
                     End="237.699990065892,-20.3333303096558" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 10]"
-          TopLeft="422.933320882585,340.800001900991">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="510.733321875997,-66.9333333884346"
-              Start="0,0"
-              End="510.733321875997,-59.4333333884346">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-29.5964120382998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-29.5964120382998"
-                    Point2="0,-33.5964120382998"
-                    Point3="4,-33.5964120382998" />
-                  <mssgle:LineSegment
-                    End="506.733321875997,-33.5964120382998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="506.733321875997,-33.5964120382998"
-                    Point2="510.733321875997,-33.5964120382998"
-                    Point3="510.733321875997,-37.5964120382998" />
-                  <mssgle:LineSegment
-                    End="510.733321875997,-59.4333333884346" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 11]"
-          TopLeft="318.366658222676,401.266669855648">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="535.299984535906,-127.400001343092"
-              Start="0,0"
-              End="535.299984535906,-119.900001343092">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-59.9729827856877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-59.9729827856877"
-                    Point2="0,-63.9729827856877"
-                    Point3="4,-63.9729827856877" />
-                  <mssgle:LineSegment
-                    End="531.299984535906,-63.9729827856877" />
-                  <mssgle:CubicBezierSegment
-                    Point1="531.299984535906,-63.9729827856877"
-                    Point2="535.299984535906,-63.9729827856877"
-                    Point3="535.299984535906,-67.9729827856877" />
-                  <mssgle:LineSegment
-                    End="535.299984535906,-119.900001343092" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="260.8,41.6"
-          Id="Package\SQL - Validar y Promover a FactVentas"
-          TopLeft="1064.29997029702,230.200001549721" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 12]"
-          TopLeft="1017.66664275858,252.033335031139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46.6333275384377,0"
-              Start="0,0"
-              End="39.1333275384377,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="39.1333275384377,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -7,13 +7,13 @@
   DTS:CreatorName="TIPO\betob"
   DTS:DTSID="{B8950540-C98F-4026-88A8-C75C0936503C}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LastModifiedProductVersion="16.0.521.0"
   DTS:LocaleID="13322"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{450B63DE-D8FD-4CE1-A667-89185CBDCE89}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{82B890ED-975A-4234-8E36-6103E295E5A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1319,7 +1319,7 @@ where [refTable].[tipo_documento] = ?</property>
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[stg_FactVentas]</property>
+                  name="OpenRowset">[stg].[stg_FactVentas]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -1456,12 +1456,6 @@ where [refTable].[tipo_documento] = ?</property>
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha_carga]"
                       dataType="dbTimeStamp"
                       name="fecha_carga" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[motivo_rechazo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="250"
-                      name="motivo_rechazo" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1506,7 +1500,7 @@ where [refTable].[tipo_documento] = ?</property>
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[FactVentas]</property>
+                  name="OpenRowset">[stg].[stg_FactVentas]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -3567,23 +3561,23 @@ WHERE v.venta_id &gt; ?</property>
       DTS:To="Package\Tarea Flujo de datos" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="173.6,42.4"
+          Size="173.333333333334,42.6666666666667"
           Id="Package\Tarea Ejecutar SQL"
           TopLeft="46.2499993108213,68.4210539194356" />
         <NodeLayout
-          Size="177.6,42.4"
+          Size="177.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos"
           TopLeft="304.999995455146,69.7894749978243" />
         <EdgeLayout
@@ -3617,51 +3611,51 @@ WHERE v.venta_id &gt; ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.6,42.4"
+          Size="181.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Destino de OLE DB 1"
           TopLeft="14.4444444444445,947.333333333333" />
         <NodeLayout
-          Size="185.6,42.4"
+          Size="185.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Búsqueda DimTiempo"
           TopLeft="577.692307692308,97.6923076923077" />
         <NodeLayout
-          Size="197.6,42.4"
+          Size="197.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Búsqueda DimEmpleado"
           TopLeft="191.538461538461,456.923076923077" />
         <NodeLayout
-          Size="177.6,42.4"
+          Size="177.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Conversión de datos"
           TopLeft="573.846153846154,27.6923076923077" />
         <NodeLayout
-          Size="225.6,42.4"
+          Size="225.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Búsqueda DimTipoDocumento"
           TopLeft="36.9230769230769,625.641025641026" />
         <NodeLayout
-          Size="192,42.4"
+          Size="192,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Búsqueda DimProducto"
           TopLeft="269.230769230769,347.435897435898" />
         <NodeLayout
-          Size="145.6,42.4"
+          Size="145.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Unión de todo"
           TopLeft="580.76923076923,727.948717948718" />
         <NodeLayout
-          Size="190.4,42.4"
-          Id="Package\Tarea Flujo de datos\Búsqueda DimSucursal"
-          TopLeft="160,534.615384615385" />
-        <NodeLayout
-          Size="172,42.4"
-          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
-          TopLeft="566.222222222222,826.666666666667" />
-        <NodeLayout
-          Size="166.4,42.4"
-          Id="Package\Tarea Flujo de datos\Columna derivada"
-          TopLeft="24.4444444444444,824" />
-        <NodeLayout
-          Size="168,42.4"
+          Size="168,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Origen de OLE DB"
           TopLeft="37.0769230769235,23.6153846153846" />
         <NodeLayout
-          Size="191.2,42.4"
+          Size="172,42.6666666666667"
+          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
+          TopLeft="566.222222222222,826.666666666667" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Tarea Flujo de datos\Columna derivada"
+          TopLeft="24.4444444444444,824" />
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\Tarea Flujo de datos\Búsqueda DimSucursal"
+          TopLeft="160,534.615384615385" />
+        <NodeLayout
+          Size="191.333333333334,42.6666666666667"
           Id="Package\Tarea Flujo de datos\Búsqueda DimCliente"
           TopLeft="430,203.846153846154" />
         <EdgeLayout
@@ -4132,14 +4126,14 @@ WHERE v.venta_id &gt; ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80.6666666666667"
+              EndConnector="0,80.6666666666664"
               Start="0,0"
-              End="0,73.1666666666667">
+              End="0,73.1666666666664">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.1666666666667" />
+                    End="0,73.1666666666664" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4152,15 +4146,10 @@ WHERE v.venta_id &gt; ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino de OLE DB 1">
+    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4234,10 +4223,15 @@ WHERE v.venta_id &gt; ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
+    design-time-name="Package\Tarea Flujo de datos\Destino de OLE DB 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
