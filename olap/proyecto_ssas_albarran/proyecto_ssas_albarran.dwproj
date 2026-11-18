@@ -6,10 +6,75 @@
     <Name>proyecto_ssas_albarran.database</Name>
     <FullPath>proyecto_ssas_albarran.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>DW Albarran.cube</Name>
+      <FullPath>DW Albarran.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>DW Albarran.partitions</Name>
+          <FullPath>DW Albarran.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Producto.dim</Name>
+      <FullPath>Dim Producto.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Cliente.dim</Name>
+      <FullPath>Dim Cliente.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Empleado.dim</Name>
+      <FullPath>Dim Empleado.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Tiempo.dim</Name>
+      <FullPath>Dim Tiempo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Sucursal.dim</Name>
+      <FullPath>Dim Sucursal.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Tipo Documento.dim</Name>
+      <FullPath>Dim Tipo Documento.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>DW Albarran.ds</Name>
+      <FullPath>DW Albarran.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>DW Albarran.dsv</Name>
+      <FullPath>DW Albarran.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DW_Albarran</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
