@@ -7,13 +7,13 @@
   DTS:CreatorName="TIPO\betob"
   DTS:DTSID="{9103AE30-DDEA-49B3-852B-66931BD0D5DA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="13322"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{AEEAAEAF-F4E1-4DCF-BE6D-9794CA76020F}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F8372181-61B0-4516-BBF8-67BF639EC07E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -168,7 +168,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{7DB5BEC9-32D3-4D30-8AF5-013658F85232}"
-          SQLTask:SqlStatementSource="USE DW_Albarran;&#xA;GO&#xA;&#xA;BEGIN TRANSACTION;&#xA;&#xA;-- 1. Control de Integridad: Abortar si llegaron claves foráneas huérfanas (NULL)&#xA;IF EXISTS (&#xA;    SELECT 1 FROM dbo.stg_FactVentas &#xA;    WHERE sk_tiempo IS NULL &#xA;       OR sk_cliente IS NULL &#xA;       OR sk_producto IS NULL &#xA;       OR sk_empleado IS NULL &#xA;       OR sk_sucursal IS NULL &#xA;       OR sk_tipo_documento IS NULL&#xA;)&#xA;BEGIN&#xA;    ROLLBACK TRANSACTION;&#xA;    RAISERROR('Error: Se detectaron claves foráneas huérfanas (NULL) en stg_FactVentas. Carga cancelada.', 16, 1);&#xA;    RETURN;&#xA;END;&#xA;&#xA;-- 2. Control de Reglas de Negocio: Abortar si hay cantidades o montos negativos&#xA;IF EXISTS (&#xA;    SELECT 1 FROM dbo.stg_FactVentas &#xA;    WHERE cantidad &lt;= 0 OR monto_bruto &lt; 0 OR monto_neto &lt; 0&#xA;)&#xA;BEGIN&#xA;    ROLLBACK TRANSACTION;&#xA;    RAISERROR('Error: Se detectaron importes o cantidades incoherentes en stg_FactVentas. Carga cancelada.', 16, 1);&#xA;    RETURN;&#xA;END;&#xA;&#xA;-- 3. Promoción segura a FactVentas (Evitando duplicar ventas ya cargadas)&#xA;INSERT INTO dbo.FactVentas (&#xA;    sk_tiempo, sk_cliente, sk_producto, sk_empleado, sk_sucursal, sk_tipo_documento,&#xA;    venta_id, numero_documento, cantidad, precio_unitario, descuento_original,&#xA;    monto_bruto, monto_descuento, monto_neto, fecha_carga&#xA;)&#xA;SELECT &#xA;    s.sk_tiempo, s.sk_cliente, s.sk_producto, s.sk_empleado, s.sk_sucursal, s.sk_tipo_documento,&#xA;    s.venta_id, s.numero_documento, s.cantidad, s.precio_unitario, s.descuento_original,&#xA;    s.monto_bruto, s.monto_descuento, s.monto_neto, GETDATE()&#xA;FROM dbo.stg_FactVentas s&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1 FROM dbo.FactVentas f &#xA;    WHERE f.venta_id = s.venta_id &#xA;      AND f.sk_producto = s.sk_producto&#xA;);&#xA;&#xA;COMMIT TRANSACTION;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE DW_Albarran;&#xA;GO&#xA;&#xA;BEGIN TRANSACTION;&#xA;&#xA;-- 1. Control de Integridad: Abortar si llegaron claves foráneas huérfanas (NULL)&#xA;IF EXISTS (&#xA;    SELECT 1 FROM stg.stg_FactVentas &#xA;    WHERE sk_tiempo IS NULL &#xA;       OR sk_cliente IS NULL &#xA;       OR sk_producto IS NULL &#xA;       OR sk_empleado IS NULL &#xA;       OR sk_sucursal IS NULL &#xA;       OR sk_tipo_documento IS NULL&#xA;)&#xA;BEGIN&#xA;    ROLLBACK TRANSACTION;&#xA;    RAISERROR('Error: Se detectaron claves foráneas huérfanas (NULL) en stg_FactVentas. Carga cancelada.', 16, 1);&#xA;    RETURN;&#xA;END;&#xA;&#xA;-- 2. Control de Reglas de Negocio: Abortar si hay cantidades o montos negativos&#xA;IF EXISTS (&#xA;    SELECT 1 FROM stg.stg_FactVentas &#xA;    WHERE cantidad &lt;= 0 OR monto_bruto &lt; 0 OR monto_neto &lt; 0&#xA;)&#xA;BEGIN&#xA;    ROLLBACK TRANSACTION;&#xA;    RAISERROR('Error: Se detectaron importes o cantidades incoherentes en stg_FactVentas. Carga cancelada.', 16, 1);&#xA;    RETURN;&#xA;END;&#xA;&#xA;-- 3. Promoción segura a FactVentas (Evitando duplicar ventas ya cargadas)&#xA;INSERT INTO dbo.FactVentas (&#xA;    sk_tiempo, sk_cliente, sk_producto, sk_empleado, sk_sucursal, sk_tipo_documento,&#xA;    venta_id, numero_documento, cantidad, precio_unitario, descuento_original,&#xA;    monto_bruto, monto_descuento, monto_neto, fecha_carga&#xA;)&#xA;SELECT &#xA;    s.sk_tiempo, s.sk_cliente, s.sk_producto, s.sk_empleado, s.sk_sucursal, s.sk_tipo_documento,&#xA;    s.venta_id, s.numero_documento, s.cantidad, s.precio_unitario, s.descuento_original,&#xA;    s.monto_bruto, s.monto_descuento, s.monto_neto, GETDATE()&#xA;FROM stg.stg_FactVentas s&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1 FROM dbo.FactVentas f &#xA;    WHERE f.venta_id = s.venta_id &#xA;      AND f.sk_producto = s.sk_producto&#xA;);&#xA;&#xA;COMMIT TRANSACTION;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -279,51 +279,51 @@
       DTS:To="Package\EPT - Cargar FactVentas (a Staging)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248,41.3333333333334"
+          Size="248,41"
           Id="Package\EPT - Cargar FactVentas (a Staging)"
           TopLeft="769.666642758582,232.266668512556" />
         <NodeLayout
-          Size="158.666666666667,41.3333333333334"
+          Size="159,41"
           Id="Package\EPT - DimCliente"
           TopLeft="158.333327041732,56.3333337810306" />
         <NodeLayout
-          Size="172.666666666667,41.3333333333334"
+          Size="173,41"
           Id="Package\EPT - DimEmpleado"
           TopLeft="351.66665269269,258.199998822212" />
         <NodeLayout
-          Size="168,41.3333333333334"
+          Size="168,41"
           Id="Package\EPT - DimProducto"
           TopLeft="354.166652593348,204.933333347109" />
         <NodeLayout
-          Size="166.666666666667,41.3333333333334"
+          Size="167,41"
           Id="Package\EPT - DimSucursal"
           TopLeft="313.333320882585,340.800001900991" />
         <NodeLayout
-          Size="160.666666666667,41.3333333333334"
+          Size="161,41"
           Id="Package\EPT - DimTiempo"
           TopLeft="212.499991556009,401.266669855648" />
         <NodeLayout
-          Size="200,41.3333333333334"
+          Size="200,41"
           Id="Package\EPT - DimTipoDocumento"
           TopLeft="431.666649513775,57.7999980370205" />
         <NodeLayout
-          Size="202.666666666667,41.3333333333334"
+          Size="203,41"
           Id="Package\SQL - Limpieza de Staging"
           TopLeft="65.8333307173518,227.933335144785" />
         <NodeLayout
-          Size="260.666666666667,41.3333333333334"
+          Size="261,41"
           Id="Package\SQL - Validar y Promover a FactVentas"
           TopLeft="1064.29997029702,230.200001549721" />
         <EdgeLayout

@@ -3,6 +3,20 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWcbBqpkXuUWGwnkeT1RfYgAAAAAYAAAARABXACAAQQBsAGIAYQByAHIAYQBuAAAAEGYAAAABAAAgAAAAPeBKtNd6SPK1NYI+QZ+gz7PD39NMA/CieMr8ZtFEZtsAAAAADoAAAAACAAAgAAAAll4l31L2BnVFwUl11Vsy+KNvUwvF/TEccfLb7oZ/DSMgAAAA+60qjlKYcuF2IC1oZoMm5icQKTarJJJvdKQ0sL6V0AdAAAAAN4uSpeHSMm/rNB9qB6rpBTO3a9x1CxfPvNgnGLY0c4JBfmuRlvWJsKVAONNGCDVI/CntPzWKko739yDkXsDn1Q==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWcbBqpkXuUWGwnkeT1RfYgAAAAAYAAAARABXACAAQQBsAGIAYQByAHIAYQBuAAAAEGYAAAABAAAgAAAA4rqq3nF6IfK1BUctL6kRQI4DU+AIzufhhTO2ViKCEs0AAAAADoAAAAACAAAgAAAAGunIaVk+ccNH4DQuM8cBpXxZ5wCYj+u2WczvX/4ia4QgAAAAj8ZxRNurqdZXR6GzEVXHpCgRC6FBO1Qvptzz7z7zbyxAAAAAygIqxKJKaPNe84x50+63ptD9lgHwrD1d7JTte1uUCehVoKkL4y7SsBMZTgD/hDCpw4/f/rBRMhfWe7b96woOHw==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
         <TargetServer>localhost</TargetServer>
         <TargetDatabase>proyecto_ssas_albarran</TargetDatabase>
         <StartObject>

@@ -64,14 +64,14 @@
           <ConfigurationSetting>
             <Id>DW Albarran</Id>
             <Name>DW Albarran</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DW_Albarran</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Persist Security Info=True;Password=;User ID=;Initial Catalog=DW_Albarran</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
             <Id>DW Albarran</Id>
             <Name>DW Albarran</Name>
-            <Value xsi:type="xsd:int">0</Value>
+            <Value xsi:type="xsd:int">1</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>
       </Options>
