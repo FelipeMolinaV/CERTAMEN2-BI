@@ -3,6 +3,18 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>DW Albarran</Id>
+            <Name>DW Albarran</Name>
+          </ConfigurationSetting>
+        </UserPasswords>
         <TargetServer>localhost</TargetServer>
         <TargetDatabase>proyecto_ssas_albarran</TargetDatabase>
         <StartObject>
