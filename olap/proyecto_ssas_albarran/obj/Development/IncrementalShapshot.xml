@@ -19,63 +19,63 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>tkcsAYFKlKweNdCIVnolaYTO5hM=17-11-2026 22:57:2717-11-2026 22:57:27</TimeStamp>
+        <TimeStamp>6hMbuu6qBO5vQaayRFEOpXl4HiI=18-11-2026 2:11:4117-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>DW Albarran</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>CI4vHcYurEELHS9ImjiksQ+4J8A=17-11-2026 23:01:0517-11-2026 23:01:04</TimeStamp>
+        <TimeStamp>CI4vHcYurEELHS9ImjiksQ+4J8A=17-11-2026 23:46:2617-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>DW Albarran</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>aQyiPMEeDyesCZ41n2h+gcaOoqo=17-11-2026 23:12:3217-11-2026 23:07:25</TimeStamp>
+        <TimeStamp>IJsJo1psLyr+8XYRC1mlK094Ivw=18-11-2026 3:18:2317-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Producto</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>NBeFqnwLLU6yYxWytFX7v71rItA=17-11-2026 23:12:3217-11-2026 23:07:26</TimeStamp>
+        <TimeStamp>i+EFf2uegcnPXWJzVIBx4CL+0JA=18-11-2026 3:18:2417-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Cliente</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Px/uBydoMpQd9P7RzCbLlsHGeA4=17-11-2026 23:07:2617-11-2026 23:07:26</TimeStamp>
+        <TimeStamp>YPZkXkx1zqsJqh5lwL+H6JB7GXA=18-11-2026 3:18:2517-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Empleado</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>pygpOas54lEziGiI583ppBdknwc=17-11-2026 23:07:2617-11-2026 23:07:26</TimeStamp>
+        <TimeStamp>HVPDHfTeKTT9rxfP8KAZn2UQgVA=18-11-2026 3:18:2717-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Tiempo</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>5Covn7H+izZ2t3XsBOS0CQmxxAQ=17-11-2026 23:07:2617-11-2026 23:07:26</TimeStamp>
+        <TimeStamp>7uYn/Oc+4z6JMF97lP9hCxUbJRc=18-11-2026 3:18:2517-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Sucursal</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>DDojcQrQHRLiDNTgv4u7OuyYqDk=17-11-2026 23:07:2617-11-2026 23:07:26</TimeStamp>
+        <TimeStamp>DDojcQrQHRLiDNTgv4u7OuyYqDk=17-11-2026 23:46:2617-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>Dim Tipo Documento</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>+0M2u9sENF0nVTv2m892e86awf0=17-11-2026 23:12:3217-11-2026 23:07:25Ix1wWLFBYlRdlfHY0yZUykguomk=17-11-2026 23:07:2617-11-2026 23:07:25</TimeStamp>
+        <TimeStamp>MARtZQhqyBoxs5m+xGiWCC2EJyg=18-11-2026 3:18:2017-11-2026 23:46:26J+K/oUH30Vd1YX9uHBe9PplMSZ0=18-11-2026 1:38:0917-11-2026 23:46:26</TimeStamp>
         <ID>
           <String>DW Albarran</String>
         </ID>
@@ -83,7 +83,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>b1TRejziZJo7ovtNQ3jr4aw5DoU=17-11-2026 22:49:2517-11-2026 22:49:25</TimeStamp>
+      <TimeStamp>b1TRejziZJo7ovtNQ3jr4aw5DoU=17-11-2026 23:46:2617-11-2026 23:46:26</TimeStamp>
       <ID>
         <String>proyecto_ssas_albarran</String>
       </ID>
@@ -92,5 +92,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2026-11-18T02:12:34.87Z</LastDeployed>
+  <LastDeployed>2026-11-18T06:45:57.76Z</LastDeployed>
 </DeploymentSnapshot>
