@@ -3,7 +3,7 @@
     <DataSources>
       <DataSource>
         <ID>DW Albarran</ID>
-        <ConnectionString>Provider=SQLNCLI11.1;Data Source=TIPO;Integrated Security=SSPI;Initial Catalog=DW_Albarran</ConnectionString>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DW_Albarran</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateServiceAccount</ImpersonationMode>
           <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
